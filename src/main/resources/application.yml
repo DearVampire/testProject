@@ -1,0 +1,17 @@
+server:
+  port: 8090
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-handlers-package: com.example.testproject.mapper
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #开启MyBatis的二级缓存
+    cache-enabled: true
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://140.143.82.119:10094/nxw_test?serverTimezone=CTT&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: mysql@lxj
