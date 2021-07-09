@@ -1,5 +1,6 @@
 package com.example.testproject.util;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -10,7 +11,7 @@ import java.util.Date;
  * @Version: 1.0
  */
 public class DateUtil {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         //这样创建date就是系统当前时间，但是可读性不好
         Date date = new Date();
         System.out.println("日期对象直接打印时间："+date);
@@ -24,7 +25,12 @@ public class DateUtil {
 
         //字符串转换为日期
         //String和Date之间的转换都必须通过SimpleDateFormat实现
-        String s = "20210716";
+        String s = "20210716000000";
+        //注意：格式必须和字符串中的格式完全一致
+        SimpleDateFormat ss = new SimpleDateFormat("yyyyMMddhhmmss");
+        date = ss.parse(s);
+        System.out.println("通过SimpleDateFormat实现String转Date："+date);
+
         //
     }
 }
